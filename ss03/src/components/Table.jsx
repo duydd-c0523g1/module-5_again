@@ -56,7 +56,7 @@ export default function Table() {
               <td>{post.category}</td>
               <td>{post.updatedAt}</td>
               <td>
-                <span><button type="button" className="btn btn-primary">EDIT</button></span> 
+                <span><button type="button" className="btn btn-warning">EDIT</button></span> 
                 <span><button type="button" className="btn btn-danger">DELETE</button></span>
               </td>
             </tr>
