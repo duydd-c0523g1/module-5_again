@@ -8,4 +8,4 @@ let book = {
         console.log(`${this.title} was written by ${this.author}, it has ${this.pages} pages`);
     }
 }
-book.info()
+book.info();
