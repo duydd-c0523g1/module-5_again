@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        padding-bottom: 60px;
+      }
+
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+      }
+      .navbar {
+        position: fixed;
+        z-index: 999;
+        padding: 30px;
+      }
+
+      .navbar a {
+        font-size: larger;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      footer {
+        background-color: #f8f9fa;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 80px;
+      }
+      footer .logo {
+        width: 50px;
+        margin-top: 30px;
+      }
+      footer .social-links {
+        display: flex;
+        gap: 40px;
+        margin-left: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"
+              ><img
+                src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png"
+                alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Customers</a>
+                </li>
+              </ul>
+            </div>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://images.pexels.com/photos/5007356/pexels-photo-5007356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="d-block w-100"
+                alt="Ảnh 1"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Slide label</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Fugiat, voluptatibus. Dolore, commodi delectus. Sit facilis
+                  explicabo corporis sunt aspernatur culpa quisquam neque
+                  placeat tenetur a? Soluta accusamus recusandae pariatur animi.
+                </p>
+                <button type="button" class="btn btn-primary">
+                  Learn more
+                </button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.pexels.com/photos/1591361/pexels-photo-1591361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="d-block w-100"
+                alt="Ảnh 2"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Slide label</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Fugiat, voluptatibus. Dolore, commodi delectus. Sit facilis
+                  explicabo corporis sunt aspernatur culpa quisquam neque
+                  placeat tenetur a? Soluta accusamus recusandae pariatur animi.
+                </p>
+                <button type="button" class="btn btn-primary">
+                  Learn more
+                </button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.pexels.com/photos/2549018/pexels-photo-2549018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                class="d-block w-100"
+                alt="Ảnh 3"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Slide label</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Fugiat, voluptatibus. Dolore, commodi delectus. Sit facilis
+                  explicabo corporis sunt aspernatur culpa quisquam neque
+                  placeat tenetur a? Soluta accusamus recusandae pariatur animi.
+                </p>
+                <button type="button" class="btn btn-primary">
+                  Learn more
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="logo">
+          <!-- Placeholder logo -->
+          <img
+            src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png"
+            alt="Logo"
+          />
+        </div>
+        <div class="social-links">
+          <!-- Các liên kết đến các trang mạng xã hội -->
+          <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+          <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+          <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+        <div class="contact-info">
+          <!-- Thông tin liên lạc -->
+          <p>Contact: example@email.com</p>
+        </div>
+      </div>
+      <div class="copyright text-center">
+        <!-- Dòng nhỏ về bản quyền -->
+        <p>&copy; 2023 Furama Resort Danang. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+      integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
