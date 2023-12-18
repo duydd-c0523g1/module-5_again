@@ -4,7 +4,10 @@ const people = [
     {name: 'Hoang', age: 10},
     {name: 'Hiep', age: 30}
 ];
-let [{name, age}, ...everyoneElse] = people;
-console.log(everyoneElse);
-console.log("Name: " + name);
-console.log("Age: " + age);
+let [duy, hoang, hiep] = people;
+console.log(duy.name);
+console.log(duy.age);
+console.log(hoang.name);
+console.log(hoang.age);
+console.log(hiep.name);
+console.log(hiep.age);
