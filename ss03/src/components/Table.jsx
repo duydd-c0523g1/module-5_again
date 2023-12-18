@@ -35,6 +35,14 @@ const posts = [
     category: "Interviews",
     updatedAt: "2 days ago",
   },
+  {
+    id: 6,
+    title:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    slug: "lorem-ipsum, dolor-sit-amet-consectetur-adipisicing-elit",
+    category: "Crypto News",
+    updatedAt: "5 days ago",
+  }
 ];
 
 export default function Table() {
