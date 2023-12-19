@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const posts = [
   {
     id: 1,
@@ -49,7 +47,6 @@ const posts = [
 export default function Table() {
   return (
     <div className="container-fluid">
-      <Link to="/add">Add new post</Link>
       <table className="table table-hover">
         <thead>
           <td>ID</td>
@@ -60,7 +57,7 @@ export default function Table() {
         </thead>
         <tbody>
           {posts.map((post) => (
-            <tr key={crypto.randomUUID}>
+            <tr key={post.id}>
               <td>{post.id}</td>
               <td>{post.title}</td>
               <td>{post.category}</td>
@@ -68,9 +65,7 @@ export default function Table() {
               <td>
                 <span>
                   <button type="button" className="btn btn-warning">
-                    <Link to={`/edit/${post.id}`} key={post.id}>
-                      Edit
-                    </Link>
+                    Edit
                   </button>
                 </span>
                 <span>

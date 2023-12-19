@@ -1,5 +1,5 @@
-import Header from "./components/list/Header";
-import Table from "./components/list/Table";
+import Header from "./components/Header";
+import Table from "./components/Table";
 function App() {
   return (
     <>
