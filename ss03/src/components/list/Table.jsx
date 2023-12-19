@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const posts = [
   {
     id: 1,
@@ -37,17 +39,17 @@ const posts = [
   },
   {
     id: 6,
-    title:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    title: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
     slug: "lorem-ipsum, dolor-sit-amet-consectetur-adipisicing-elit",
     category: "Crypto News",
     updatedAt: "5 days ago",
-  }
+  },
 ];
 
 export default function Table() {
   return (
     <div className="container-fluid">
+      <Link to="/add">Add new post</Link>
       <table className="table table-hover">
         <thead>
           <td>ID</td>
@@ -64,8 +66,18 @@ export default function Table() {
               <td>{post.category}</td>
               <td>{post.updatedAt}</td>
               <td>
-                <span><button type="button" className="btn btn-warning">EDIT</button></span> 
-                <span><button type="button" className="btn btn-danger">DELETE</button></span>
+                <span>
+                  <button type="button" className="btn btn-warning">
+                    <Link to={`/edit/${post.id}`} key={post.id}>
+                      Edit
+                    </Link>
+                  </button>
+                </span>
+                <span>
+                  <button type="button" className="btn btn-danger">
+                    DELETE
+                  </button>
+                </span>
               </td>
             </tr>
           ))}

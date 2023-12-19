@@ -49,7 +49,7 @@ export default function Table() {
         </thead>
         <tbody>
           {posts.map((post) => (
-            <tr key={crypto.randomUUID}>
+            <tr key={post.id}>
               <td>{post.id}</td>
               <td>{post.title}</td>
               <td>{post.category}</td>
