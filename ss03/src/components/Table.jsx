@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const posts = [
   {
     id: 1,
@@ -45,39 +47,96 @@ const posts = [
 ];
 
 export default function Table() {
+  const [post, setPost] = useState(posts);
+  const [input, setInput] = useState("");
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setPost([...post, { title: input }]);
+  };
   return (
-    <div className="container-fluid">
-      <table className="table table-hover">
-        <thead>
-          <td>ID</td>
-          <td>TITLE</td>
-          <td>CATEGORY</td>
-          <td>TIME</td>
-          <td colSpan={2}>ACTION</td>
-        </thead>
-        <tbody>
-          {posts.map((post) => (
-            <tr key={post.id}>
-              <td>{post.id}</td>
-              <td>{post.title}</td>
-              <td>{post.category}</td>
-              <td>{post.updatedAt}</td>
-              <td>
-                <span>
-                  <button type="button" className="btn btn-warning">
-                    Edit
-                  </button>
-                </span>
-                <span>
-                  <button type="button" className="btn btn-danger">
-                    DELETE
-                  </button>
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <>
+      <div className="container-fluid">
+        <table className="table table-hover">
+          <thead>
+            <td>ID</td>
+            <td>TITLE</td>
+            <td>CATEGORY</td>
+            <td>TIME</td>
+            <td colSpan={2}>ACTION</td>
+          </thead>
+          <tbody>
+            {posts.map((post) => (
+              <tr key={post.id}>
+                <td>{post.id}</td>
+                <td>{post.title}</td>
+                <td>{post.category}</td>
+                <td>{post.updatedAt}</td>
+                <td>
+                  <span>
+                    <button type="button" className="btn btn-warning">
+                      Edit
+                    </button>
+                  </span>
+                  <span>
+                    <button type="button" className="btn btn-danger">
+                      DELETE
+                    </button>
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <div className="container-fluid">
+        <h1>Add Post</h1>
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput" className="form-label">
+            Title
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            placeholder="This is the title"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput2" className="form-label">
+            Category
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="category"
+            placeholder="This is the category"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput2" className="form-label">
+            Content
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="content"
+            placeholder="This is the content"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
