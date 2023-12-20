@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function GreetingFunction() {
+export default function Greeting() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 

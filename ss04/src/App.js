@@ -1,9 +1,9 @@
-import GreetingFunction from './components/Greetings';
+import Greeting from './components/Greetings';
 import './App.css';
 
 function App() {
   return (
-    <GreetingFunction />
+    <Greeting />
   );
 }
 
