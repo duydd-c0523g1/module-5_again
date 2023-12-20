@@ -1,34 +1,28 @@
-import {useState} from "react";
+import { useState } from "react";
 
 export default function Greeting() {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
-    const handleFirstNameChange = (e) => {
-        setFirstName(e.target.value);
-    }
+  const handleFirstNameChange = (e) => {
+    setFirstName(e.target.value);
+  };
 
-    const handleLastNameChange = (e) => {
-        setLastName(e.target.value);
-    }
+  const handleLastNameChange = (e) => {
+    setLastName(e.target.value);
+  };
 
-    return (
-        <div>
-            <input
-                value={firstName}
-                onChange={handleFirstNameChange}
-            />
-            <br/>
-            <input
-                value={lastName}
-                onChange={handleLastNameChange}
-            />
-            <p>
-                Hello, {" "}
-                <span>
-                        {firstName} {lastName}
-                </span>
-            </p>
-        </div>
-    )
+  return (
+    <div>
+      <input value={firstName} onChange={handleFirstNameChange} />
+      <br />
+      <input value={lastName} onChange={handleLastNameChange} />
+      <p>
+        Hello,{" "}
+        <span>
+          {firstName} {lastName}
+        </span>
+      </p>
+    </div>
+  );
 }
