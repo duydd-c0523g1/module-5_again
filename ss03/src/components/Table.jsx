@@ -51,11 +51,16 @@ export default function Table() {
   const [input, setInput] = useState("");
 
   const handleChange = (e) => {
-    setInput(e.target.value);
+    const name = e.target.name;
+    if (name === title) {
+      setInput({ ...input, title: e.target.value });
+    } else if (name === category) {
+      setInput({ ...input, category: e.target.value });
+    }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPost([...post, { title: input }]);
+    setPost(...input, { title: "", category: ""});
   };
   return (
     <>
@@ -92,50 +97,46 @@ export default function Table() {
           </tbody>
         </table>
       </div>
-      
+
       <div className="container-fluid">
         <h1>Add Post</h1>
-        <div className="mb-3">
-          <label htmlFor="formGroupExampleInput" className="form-label">
-            Title
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="title"
-            placeholder="This is the title"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="formGroupExampleInput2" className="form-label">
-            Category
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="category"
-            placeholder="This is the category"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="formGroupExampleInput2" className="form-label">
-            Content
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="content"
-            placeholder="This is the content"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
-            Submit
-          </button>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="title" className="form-label">
+              Title
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="title"
+              name="title"
+              placeholder="This is the title"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="category" className="form-label">
+              Category
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="category"
+              name="category"
+              placeholder="This is the category"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );
