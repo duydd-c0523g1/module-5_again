@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
+import React from "react";
+import * as Yup from "yup";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 export default function AddNewPost() {
   const [posts, setPosts] = useState([
@@ -47,14 +50,25 @@ export default function AddNewPost() {
       updatedAt: "5 days ago",
     },
   ]);
-
+  const initValues = {
+    id: "",
+    title: "",
+    category: "",
+    timestamp: ""
+  };
+  const validate = Yup.object({
+    id: Yup.string().required("Không được bỏ trống"),
+    title: Yup.string().required("Không được bỏ trống"),
+    category: Yup.string().required("Không được bỏ trống"),
+    timestamp: Yup.string().required("Không được bỏ trống")
+  });
   const [form, setForm] = useState({});
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const isValid = form.id && form.title && form.category && form.time;
+    const isValid = form.id && form.title && form.category && form.timestamp;
     if (isValid) {
       setPosts((prevState) => [...prevState, form]);
     }
@@ -64,73 +78,82 @@ export default function AddNewPost() {
       <Navbar />
       <div className="container-fluid">
         <h1>Add Post</h1>
-        <form>
-          <div className="mb-3">
-            <label htmlFor="id" className="form-label">
-              ID
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="id"
-              name="id"
-              value={form.id || posts.length + 1}
-              placeholder="00"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="title" className="form-label">
-              Title
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="title"
-              name="title"
-              value={form.title || ""}
-              placeholder="This is the title"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="category" className="form-label">
-              Category
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="category"
-              name="category"
-              value={form.category || ""}
-              placeholder="This is the category"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="title" className="form-label">
-              Last update
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="timestamp"
-              name="timestamp"
-              value={form.time || ""}
-              placeholder="69 hours ago"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <button
-              type="submit"
-              className="btn btn-primary"
-              onSubmit={handleSubmit}
-            >
-              Submit
-            </button>
-          </div>
-        </form>
+        <Formik
+          initialValues={initValues}
+          onSubmit={handleSubmit}
+          validationSchema={validate}
+        >
+          <Form>
+            <div className="mb-3">
+              <label htmlFor="id" className="form-label">
+                ID
+              </label>
+              <Field
+                type="text"
+                className="form-control"
+                id="id"
+                name="id"
+                value={form.id || posts.length + 1}
+                placeholder="00"
+                onChange={handleChange}
+              />
+              <ErrorMessage component="span" name="id" className="error" />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="title" className="form-label">
+                Title
+              </label>
+              <Field
+                type="text"
+                className="form-control"
+                id="title"
+                name="title"
+                value={form.title || ""}
+                placeholder="This is the title"
+                onChange={handleChange}
+              />
+              <ErrorMessage component="span" name="title" className="error" />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="category" className="form-label">
+                Category
+              </label>
+              <Field
+                type="text"
+                className="form-control"
+                id="category"
+                name="category"
+                value={form.category || ""}
+                placeholder="This is the category"
+                onChange={handleChange}
+              />
+              <ErrorMessage component="span" name="category" className="error" />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="title" className="form-label">
+                Last update
+              </label>
+              <Field
+                type="text"
+                className="form-control"
+                id="timestamp"
+                name="timestamp"
+                value={form.time || ""}
+                placeholder="69 hours ago"
+                onChange={handleChange}
+              />
+              <ErrorMessage component="span" name="timestamp" className="error" />
+            </div>
+            <div className="mb-3">
+              <button
+                type="submit"
+                className="btn btn-primary"
+              >
+                Submit
+              </button>
+            </div>
+          </Form>
+        </Formik>
       </div>
     </>
   );
