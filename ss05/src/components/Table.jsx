@@ -48,18 +48,6 @@ export default function Table() {
       updatedAt: "5 days ago",
     }
   ])
-
-  const [form, setForm] = useState({})
-  const handleChange = (e) => {
-    setForm({...form, [e.target.name]: e.target.value })
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const isValid = form.id && form.title && form.category && form.time;
-       if(isValid) {
-           setPosts(prevState => [...prevState, form]);
-       }
-  }
   const handleDelete = (item) => {
     setPosts(prevState => prevState.filter(post => post.id!== item.id))
   }
@@ -97,77 +85,6 @@ export default function Table() {
             ))}
           </tbody>
         </table>
-      </div>
-
-      <div className="container-fluid">
-        <h1>Add Post</h1>
-        <form>
-        <div className="mb-3">
-            <label htmlFor="id" className="form-label">
-              ID
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="id"
-              name="id"
-              value={form.id || posts.length + 1}
-              placeholder="00"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="title" className="form-label">
-              Title
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="title"
-              name="title"
-              value={form.title || ""}
-              placeholder="This is the title"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="category" className="form-label">
-              Category
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="category"
-              name="category"
-              value={form.category || ""}
-              placeholder="This is the category"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="title" className="form-label">
-              Last update
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="timestamp"
-              name="timestamp"
-              value={form.time || ""}
-              placeholder="69 hours ago"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <button
-              type="submit"
-              className="btn btn-primary"
-              onSubmit={handleSubmit}
-            >
-              Submit
-            </button>
-          </div>
-        </form>
       </div>
     </>
   );
