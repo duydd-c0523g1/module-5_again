@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "./Navbar";
 import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -73,7 +72,6 @@ export default function AddNewPost() {
   };
   return (
     <>
-      <Navbar />
       <div className="container-fluid">
         <h1>Add Post</h1>
         <Formik

@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <>
       <nav>
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <Link to="/" className="nav-link active" href="#home">
+            <NavLink to="/" className="nav-link active" href="#home">
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/add" className="nav-link" href="#about">
+            <NavLink to="/add" className="nav-link" href="#about">
               Add new post
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
