@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+  margin-top: 2%;
+}
+
+table {
+  margin-top: 5%;
+}
+
+thead {
+  font-weight: 800;
+  text-align: center;
+}
+
+tbody {
+  text-align: center;
+}
+
+table span {
+  margin-left: 3%;
+}
