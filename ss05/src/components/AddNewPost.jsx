@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Navigate } from "react-router-dom";
 
 export default function AddNewPost() {
   const [posts, setPosts] = useState([
@@ -134,7 +135,7 @@ export default function AddNewPost() {
                 className="form-control"
                 id="timestamp"
                 name="timestamp"
-                value={form.time || ""}
+                value={form.timestamp || ""}
                 placeholder="69 hours ago"
                 onChange={handleChange}
               />
