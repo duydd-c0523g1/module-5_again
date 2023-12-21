@@ -68,10 +68,8 @@ export default function AddNewPost() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const isValid = form.id && form.title && form.category && form.timestamp;
-    if (isValid) {
-      setPosts((prevState) => [...prevState, form]);
-    }
+    setPosts([...posts, form]);
+    setForm(initValues);
   };
   return (
     <>
@@ -147,7 +145,7 @@ export default function AddNewPost() {
             <div className="mb-3">
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-success"
               >
                 Submit
               </button>
