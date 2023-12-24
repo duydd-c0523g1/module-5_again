@@ -2,7 +2,6 @@ import { useState } from "react";
 import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Navigate } from "react-router-dom";
 
 export default function AddNewPost() {
   const [posts, setPosts] = useState([
