@@ -26,10 +26,9 @@ export default function AddNewPost() {
             <Formik
               initialValues={initValue}
               validationSchema={yup.object().shape({
-                title: yup.string().required("Không được để trống"),
-                slug: yup.string().required("Không được để trống"),
-                category: yup.string().required("Không được để trống"),
-                updated: yup.string().required("Không được để trống"),
+                title: yup.string().required("Tiêu đề không được để trống"),
+                category: yup.string().required("Danh mục không được để trống"),
+                updated: yup.string().required("Thời gian không được để trống"),
               })}
               onSubmit={(value) => {
                 handleSubmit(value);
