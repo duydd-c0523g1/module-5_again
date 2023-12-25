@@ -56,10 +56,10 @@ export default function AddNewPost() {
     timestamp: ""
   };
   const validate = Yup.object({
-    id: Yup.string().required("Không được bỏ trống"),
-    title: Yup.string().required("Không được bỏ trống"),
-    category: Yup.string().required("Không được bỏ trống"),
-    timestamp: Yup.string().required("Không được bỏ trống")
+    id: Yup.string().required("ID không được bỏ trống"),
+    title: Yup.string().required("Tiêu đề không được bỏ trống"),
+    category: Yup.string().required("Danh mục không được bỏ trống"),
+    timestamp: Yup.string().required("Thời gian không được bỏ trống")
   });
   const [form, setForm] = useState({});
   const handleChange = (e) => {
