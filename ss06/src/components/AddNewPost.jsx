@@ -11,11 +11,15 @@ export default function AddNewPost() {
     category: "",
     updated: "",
   };
+  try {
   async function handleSubmit(values) {
     let result = await blog.createBlog(values);
     if (result) {
       navigate("/");
     }
+  }
+  } catch (e) {
+    console.log(e);
   }
 
   return (
