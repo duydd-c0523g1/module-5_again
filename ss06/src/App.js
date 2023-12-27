@@ -2,14 +2,14 @@ import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {StrictMode} from "react";
 import AddNewPost from './components/AddNewPost';
-import Table from './components/Table';
+import BlogList from './components/BlogList';
 function App() {
     return (
         <>
             <StrictMode>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Table/>}/>
+                        <Route path="/" element={<BlogList/>}/>
                         <Route path="/add" element={<AddNewPost/>}/>
                     </Routes>
                 </BrowserRouter>

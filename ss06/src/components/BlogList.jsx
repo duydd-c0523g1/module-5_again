@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { deleteBlogById, getAll } from "../service/PostService";
 import { Link } from "react-router-dom";
 
-export default function Table() {
+export default function BlogList() {
   const [blogs, setBlogs] = useState([]);
   const getAllBlog = async () => {
     try {

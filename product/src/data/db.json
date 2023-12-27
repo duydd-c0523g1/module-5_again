@@ -1,0 +1,42 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "Nước uống"
+    },
+    {
+      "id": 2,
+      "name": "Đồ ăn"
+    },
+    {
+      "id": 3,
+      "name": "Thuốc phiện"
+    }
+  ],
+  "products": [
+    {
+      "id": 2,
+      "name": "Phởeqweeqwwq",
+      "inputDate": "2024-01-26",
+      "price": "30000",
+      "quantity": 223,
+      "total": 6690000,
+      "category": {
+        "id": 3,
+        "name": "Thuốc phiện"
+      }
+    },
+    {
+      "name": "TfofmisN",
+      "inputDate": "2023-11-30",
+      "price": 20000,
+      "quantity": 6,
+      "total": 120000,
+      "category": {
+        "id": 2,
+        "name": "Đồ ăn"
+      },
+      "id": 4
+    }
+  ]
+}
